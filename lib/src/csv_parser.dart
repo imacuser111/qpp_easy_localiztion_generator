@@ -51,7 +51,7 @@ class CSVParser {
       if (hasArgs) {
         final List<String> args = [];
 
-        strBuilder.write('static const String ${_joinKey(keyParts)}(');
+        strBuilder.write('static String ${_joinKey(keyParts)}(');
 
         // If is plural key, will use plural(int) method for translate.
         // We state this num value is 'countForUnit' for displaying unit of translation.
@@ -87,7 +87,7 @@ class CSVParser {
           strBuilder.write('}');
         }
 
-        strBuilder.write(') = ');
+        strBuilder.write(') => ');
         strBuilder.write('\'${item.key}\'');
 
         // Choose api of translation.
